@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <h2>URL Shortener</h2>
+    <br><br>
+    <p>To post longUrl</p>
+    <form action="/api/shorten" method="post"> 
+        <label for="longUrl">Long URL:</label>
+        <input type="url" id="longUrl" name="longUrl" placeholder="Enter the long URL" required>
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" name="topic" placeholder="Enter the topic" required>
+        <button type="submit">Shorten URL</button>
+    </form>
+    <br><br>
+    <p>To redirect to webpage using shortUrl</p>
+    <form id="redirectForm">
+        <label for="shortUrl">Short URL:</label>
+        <input type="text" id="shortUrl" name="alias" placeholder="Enter shortUrl alias" required>
+        <button type="submit">Redirect</button>
+    </form>
+
+    <script>
+        document.getElementById('redirectForm').addEventListener('submit', function (event) {
+            event.preventDefault(); 
+            const alias = document.getElementById('shortUrl').value;
+            if (alias) {
+                window.location.href = `/api/shorten/${alias}`;
+            }
+        });
+    </script>
+
+<br><br>
+<p>To get the Analytics of the Url</p>
+ <form id="analytics">
+    <label for="shortUrl">Short URL:</label>
+    <input type="text" id="short" name="alias" placeholder="Enter shortUrl alias" required>
+    <button type="submit">Get Analytics</button>
+</form>
+
+<script>
+    document.getElementById('analytics').addEventListener('submit', function (event) {
+        event.preventDefault(); 
+        const alias = document.getElementById('short').value;
+        if (alias) {
+            window.location.href = `/api/analytics/${alias}`;
+        }
+    });
+</script>
+
+<br><br>
+<p>To get the analytics of certain Topic</p>
+<form id="Analytics">
+    <label for="shortUrl">Topic:</label>
+    <input type="text" id="topics" name="topic" placeholder="Enter topic" required>
+    <button type="submit">Get Analytics</button>
+</form>
+
+<script>
+    document.getElementById('Analytics').addEventListener('submit', function (event) {
+        event.preventDefault(); 
+        const alias = document.getElementById('topics').value;
+        if (alias) {
+            window.location.href = `/api/analytics/topic/${alias}`;
+        }
+    });
+</script>
+<br><br>
+<form action="/overall" method="get">
+    <button type="submit">click to get overall analytics</button>
+</form>
+</script>
+</body>
+</html>
