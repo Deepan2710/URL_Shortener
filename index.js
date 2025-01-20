@@ -50,7 +50,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: 'http://localhost:8080/auth/google/callback',
+      callbackURL: 'http://urlshortener-production-bc2a.up.railway.app/auth/google/callback'||'http://localhost:8080/auth/google/callback',
     },
     async (accessToken, refreshToken, profile, done) => {
       console.log("User authenticated:", profile);
@@ -125,10 +125,7 @@ let client = null;
     client = null;    
   }
 })();
-const port=process.env.PORT || process.env.LOCAL ;
-app.listen(process.env.LOCAL,()=>{
-
-});
+const port=8080;
 app.listen(port, () => { 
   console.log("Server running");
 });   
