@@ -3,10 +3,10 @@ A url shortener ,where u can redirect with short length of url and get the UA de
 ****HOW TO USE****
 As i used Localhost server no as 8080, check the apis with 8080(ex localhost:8080/)
 
-once u entered in localhost:2710/ ,u can see a link login with google
+once u entered in localhost:8080/ ,u can see a link login with google
 click and login or create id with your gmail id (OAuth 2.0)
 
-once u clicked successfully ,u redirect into localhost:2710/button api page
+once u clicked successfully ,u redirect into localhost:8080/button api page
 where u can see buttons,
 1 st button is to post LongUrl and topic the url is related and all needed attributes are saved in mongodb and shortUrl is saved in redis cache...
 2 nd button is redirect to the webpage of the shortUrl with help of redis cache system
