@@ -1,7 +1,7 @@
 # URL_Shortener
 A url shortener ,where u can redirect with short length of url and get the UA details with no of time it used in certain topic of link   and get of overall url used and saved
 ****HOW TO USE****
-As i used Localhost server no as 2710, check the apis with 2710(ex localhost:2710/)
+As i used Localhost server no as 8080, check the apis with 8080(ex localhost:8080/)
 
 once u entered in localhost:2710/ ,u can see a link login with google
 click and login or create id with your gmail id (OAuth 2.0)
