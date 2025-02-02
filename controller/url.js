@@ -10,7 +10,11 @@ async function get_url(req, res) {
     const { longUrl, topic } = req.body;
     console.log(req.body);
     if (!longUrl) return res.status(400).json({ error: "URL not defined" });
+    const exist_url = await URL.findOne({ longUrl });
 
+if (exist_url) {
+    return res.send(`This URL is already shortened: ${exist_url.shortUrl}`);
+}
     if(!req.user._json.email) return res.status(403).json({ error: "You must be logged in to create a URL" });
     try {
         const userIp = req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
