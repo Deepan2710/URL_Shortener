@@ -1,10 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import get_url from './controller/url.js';
-import redirect_url from './controller/url_get.js';
-import url_Analytics from './controller/url_analytic.js';
-import topic_url from './controller/url_topic.js';
-import overall_url from './controller/url_overall.js';
+import {route,route1,route2} from './routes/route.js'
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
@@ -78,11 +74,9 @@ passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
 //APIs
-app.post("/api/shorten", get_url);
-app.get("/api/analytics/:alias", url_Analytics);
-app.get('/api/shorten/:alias', redirect_url);
-app.get('/api/analytics/topic/:topic', topic_url);
-app.get('/overall', overall_url);
+app.use("/api/shorten",route);
+app.use("/api/analytics", route1);
+app.use('/overall', route2);
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
