@@ -17,3 +17,5 @@ where u can see buttons,
 5th button is used to see the overall analytic of all urls posted 
 
 there are two schemes present one to save login user detials and another is to get the analytics details
+
+and docker is set up so you dockerize as container by making image
