@@ -2,7 +2,7 @@
 A url shortener ,where u can redirect with short length of url and get the UA details with no of time it used in certain topic of link   and get of overall url used and saved
 ****HOW TO USE****
 As i used Localhost server no as 8080, check the apis with 8080(ex localhost:8080/)
-**and docker is set up so you dockerize as container by making image in port 8001
+**and docker is set up so you dockerize as container by making image
 **
 
 once u entered in localhost:8080/ ,u can see a link login with google
