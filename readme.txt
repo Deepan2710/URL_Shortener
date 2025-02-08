@@ -1,5 +1,8 @@
 # URL_Shortener
 A url shortener ,where u can redirect with short length of url and get the UA details with no of time it used in certain topic of link   and get of overall url used and saved
+
+and docker is set up so you dockerize as container by making image in port 8001
+
 ****HOW TO USE****
 As i used Localhost server no as 8080, check the apis with 8080(ex localhost:8080/)
 
@@ -18,4 +21,3 @@ where u can see buttons,
 
 there are two schemes present one to save login user detials and another is to get the analytics details
 
-and docker is set up so you dockerize as container by making image
